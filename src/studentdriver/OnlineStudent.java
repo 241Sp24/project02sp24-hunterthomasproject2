@@ -9,10 +9,12 @@ public class OnlineStudent extends StudentFees{
         this.noOfMonths = noOfMonths;
     }
     
+    @Override
     public double getPayableAmount(){
         return this.noOfMonths * this.MONTHLY_FEE;
     }
     
+    @Override
     public String toString(){
         return "Average Students fee: " + getPayableAmount();
     }
