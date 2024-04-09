@@ -26,7 +26,7 @@ public class UGStudent extends StudentFees{
     }
     
     public double getPayableAmountt(){
-        return (super.getPayableAmount() * 3) + this.ADDITIONAL_FEE;
+        return ((super.getPayableAmount()) + this.ADDITIONAL_FEE) - this.scholarshipAmount;
     }
     
     @Override
