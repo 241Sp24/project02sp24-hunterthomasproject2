@@ -1,23 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package studentdriver;
 
-/**
- *
- * @author s558312
- */
 public class GraduateStudent extends StudentFees{
     private int coursesEnrolled;
     private boolean isGraduateAssistant;
-    private String graduateAssistantType;
-    private double ADDITIONAL_FEES = 654.45;
+    private String GraduateAssistantType;
+    private double ADDITIONAL_FEES = 645.45;
     
+    //constructor
     public GraduateStudent(String studentName, int studentID, boolean isEnrolled, boolean isGraduateAssistant, String graduateAssistantType, int coursesEnrolled){
         super(studentName, studentID, isEnrolled);
         this.isGraduateAssistant = isGraduateAssistant;
-        this.graduateAssistantType = graduateAssistantType;
+        this.GraduateAssistantType = graduateAssistantType;
         this.coursesEnrolled = coursesEnrolled;
     }
     
@@ -26,6 +20,7 @@ public class GraduateStudent extends StudentFees{
         this.isGraduateAssistant = isGraduateAssistant;
         this.coursesEnrolled = coursesEnrolled;
     }
+    
     
     public boolean isIsGraduateAssistant(){
         return this.isGraduateAssistant;
@@ -42,6 +37,6 @@ public class GraduateStudent extends StudentFees{
     
     @Override
     public String toString(){
-        return super.toString() + "\nGraduate assistant:" + this.isGraduateAssistant + "\nGraduate assistant type: " + this.graduateAssistantType + "\nCourses enrolled: " + this.coursesEnrolled + "\nPayable amount: " + getPayableAmount();
+        return super.toString() + "\nGraduate assistant:" + this.isGraduateAssistant + "\nGraduate assistant type: " + this.GraduateAssistantType + "\nCourses enrolled: " + this.coursesEnrolled + "\nPayable amount: " + getPayableAmount();
     }
 }
