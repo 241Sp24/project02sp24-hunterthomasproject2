@@ -57,6 +57,7 @@ public abstract class StudentFees {
         return this.PER_CREDIT_FEE * this.CREDITS_PER_COURSE;
     }
     
+    @Override
     public String toString(){
         return "Student name: " + this.studentName + "\nStudent id: " + this.studentID + "\nEnrolled: " + this.isEnrolled;
     }

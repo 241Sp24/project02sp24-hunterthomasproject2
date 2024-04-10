@@ -42,36 +42,37 @@ public class StudentDriver {
             
         while(in.hasNext() && index < students.length){
             String sp = in.nextLine();
-            String[] split = sp.split(", ");
+            String[] split = sp.split(",");
             
             int id = Integer.parseInt(split[0]);
             String name = split[1];
             boolean enrolled = Boolean.parseBoolean(split[2]);
             int courseEn = Integer.parseInt(split[3]);
             
-            if(sp.contains("half") || sp.contains("full") && GSC <= GS){
+            if(id > 100){
+                boolean HasSchol = Boolean.parseBoolean(split[4]);
+                double schamt = Double.parseDouble(split[5]);
+                students[index] = new UGStudent(name, id, enrolled, HasSchol, schamt, courseEn);
+                UGSC++;
+                
+            }
+            else if(id > 200){
                 boolean ga = Boolean.parseBoolean(split[4]);
                 String at = split[5];
                 
                 students[index] = new GraduateStudent(name, id, enrolled, ga, at, courseEn);
-                GSC++;
-            }
-            else if(split.length > 3 && UGSC <= UGS){
-
-                boolean hSchol = Boolean.parseBoolean(split[4]);
-                double schamt = Double.parseDouble(split[5]);
-                
-                students[index] = new UGStudent(name, id, enrolled, hSchol, schamt, courseEn);
-                UGSC++;
-            }
-            else if(OnSC <= OnS){
-
+                GSC++;            
+            }    
+            else if(id > 300){
                 int noOfM = Integer.parseInt(split[3]);
                 students[index] = new OnlineStudent(name, id, enrolled, noOfM);
                 OnSC++;
-            }    
+                
+            }
             
         }
+        input.close();
+        in.close();
     }
 
 }

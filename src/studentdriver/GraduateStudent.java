@@ -4,7 +4,7 @@ package studentdriver;
 public class GraduateStudent extends StudentFees{
     private int coursesEnrolled;
     private boolean isGraduateAssistant;
-    private String GraduateAssistantType;
+    private String GraduateAssistantType = "";
     private double ADDITIONAL_FEES = 645.45;
     
     //constructor
